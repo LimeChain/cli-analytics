@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const analyticsService = require('./analytics-service');
+const PORT = 3000;
 
 const app = express();
 app.use(cors());
@@ -20,10 +21,6 @@ app.get('/:type', analyticsService.getAnalytics);
 
 // Save analytics
 app.post('/', analyticsService.addAnalytics);
-
-
-const PORT = 3000;
-
 app.listen(PORT, () =>
     console.log(`Example app listening on port ${ PORT }!`),
 );

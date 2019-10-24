@@ -5,7 +5,6 @@ const collection = config.COLLECTION;
 
 class AnalyticsService {
 
-    
     static async getAnalytics(req, res) {
         try {
             let result = await dbClient.db(dbName).collection(collection).find({type: req.params.type}).toArray()
