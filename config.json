@@ -1,0 +1,4 @@
+{
+    "DATABASE_NAME": "cli-analytics",
+    "COLLECTION": "events"
+}
