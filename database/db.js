@@ -1,12 +1,13 @@
-const MongoClient = require('mongodb').MongoClient;
-const uri = 'mongodb://127.0.0.1:27017'
-const client = new MongoClient(uri, { useUnifiedTopology: true }, { useNewUrlParser: true });
+const mongoose = require('mongoose')
+const url = `${process.env.URL}/${process.env.DB_NAME}`
 
-client.connect(err => {
+class DBConfig {
 
-    if (err) return console.log(err)
+    static config() {
+        mongoose.Promise = global.Promise;
+        mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
-    console.log(`Connected MongoDB: ${uri}`)
-});
+    }
+}
 
-module.exports = { client }
+module.exports = DBConfig

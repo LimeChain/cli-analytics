@@ -1,0 +1,4 @@
+DB_NAME=cli-analytics
+COLLECTION=events
+URL=mongodb://127.0.0.1:27017
+PORT=3000

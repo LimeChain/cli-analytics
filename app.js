@@ -1,15 +1,17 @@
+require('dotenv').config();
 const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const analyticsService = require('./analytics-service');
-const PORT = 3000;
+let MongoDB = require('./database/db');
+let routes = require('./routes/routes.js')
+const PORT = process.env.PORT;
 
-const app = express();
+MongoDB.config();
+
 app.use(cors());
 app.options('*', cors());
-
 app.use(bodyParser.urlencoded({ extended: true }));
-
 // only json-type requests are valid
 app.use(bodyParser.json({
     type: function () {
@@ -17,10 +19,8 @@ app.use(bodyParser.json({
     }
 }));
 
-app.get('/:type', analyticsService.getAnalytics);
+routes(app)
 
-// Save analytics
-app.post('/', analyticsService.addAnalytics);
 app.listen(PORT, () =>
-    console.log(`Example app listening on port ${ PORT }!`),
+    console.log(`App listening on port ${ PORT }!`),
 );
