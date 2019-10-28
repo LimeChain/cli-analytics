@@ -10,9 +10,8 @@ const CliCommandDataSchema = new mongoose.Schema({
     metadata: {
         type: mongoose.Schema.Types.Mixed
     }
-
 })
 
-const CliCommandData = mongoose.model("CliCommandData", CliCommandDataSchema)
+const CliCommandData = mongoose.model("CliCommandData", CliCommandDataSchema);
 
 module.exports = CliCommandData
