@@ -29,8 +29,6 @@ class AnalyticsController {
         res.status(404).send(errorMessage);
     }
 
-
- 
 }
 
 module.exports = AnalyticsController
