@@ -4,7 +4,7 @@ class AnalyticsController {
 
     static async getAnalytics (req, res) {
         try {
-            let result = await CliCommandData.find({command: req.params.command})
+            let result = await CliCommandData.find({type: req.params.type})
             res.status(200).json(result)
         } catch (e) {
             console.error(e)
@@ -23,8 +23,7 @@ class AnalyticsController {
        }
         
     }
-
-    
+ 
 }
 
 module.exports = AnalyticsController
