@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const CliCommandDataSchema = new mongoose.Schema({
     type: {
         type: String,
-        unique: true,
         required: true,
         trim: true
     },
