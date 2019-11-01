@@ -6,7 +6,7 @@ const cors = require('cors');
 const MongoDB = require('./database/db');
 const routes = require('./routes/routes.js');
 const identification = require('./middlewares/identification');
-const PORT = process.env.PORT;
+const PORT = 3000;
 
 MongoDB.config();
 

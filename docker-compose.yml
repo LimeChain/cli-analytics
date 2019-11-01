@@ -2,8 +2,8 @@ version: "2"
 services:
   web:
     image: limechain/cli-analytics:latest
-    env_file: 
-      - .env
+    environment: 
+      - API_ID=
     ports:
       - "3000:3000"
     depends_on:

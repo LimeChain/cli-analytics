@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const url = `${process.env.URL}/${process.env.DB_NAME}`;
+const url = 'mongodb://mongo:27017/cli-analytics';
 
 class DBConfig {
 
