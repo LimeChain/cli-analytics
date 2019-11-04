@@ -9,7 +9,9 @@ const CliCommandDataSchema = new mongoose.Schema({
     metadata: {
         type: mongoose.Schema.Types.Mixed
     }
-})
+},
+    { timestamps: true }
+)
 
 const CliCommandData = mongoose.model("CliCommandData", CliCommandDataSchema);
 
